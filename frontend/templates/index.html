@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp page</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        * {
+            background-color: grey;
+            margin: 0;
+            padding: 0;
+        }
+
+        .title {
+            color: white;
+            text-align: center;
+            font-size: 400%;
+            margin: 5rem auto;
+        }
+
+        .current {
+            color: lightyellow;
+            font-size: 200%;
+        }
+
+        .today {
+            display: grid;
+            place-items: center;
+            height: 10vh;
+        }
+        form{
+            color: white;
+            display: grid;
+            place-items: center;
+            grid-template-columns: 0.5fr 1fr;
+            width: fit-content;
+            margin: 0 auto;
+            row-gap: 2rem;
+            font-size: 150%;
+        }
+        label{
+            width: 20rem;
+        }
+        input{
+            border: 2px solid grey;
+            background-color: white;
+            border-radius: 10px;
+            padding: 0.5rem 1rem;
+        }
+        button{
+            color: white;
+            background-color: black;
+            width: 5rem;
+            height: 1.5rem;
+            border-radius: 10px;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+        a{
+            display: inline-block;
+            position: relative;
+            top: 1rem;
+            left: 47.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="title">Welcome to Signup page</h2>
+    <div class="current">
+        <p class="today">Today is {{ day }}</p>
+        <p class="today">The current date is {{ current_time }}</p>
+    </div>
+    <div class="take">
+        <form action="/submit" method="post">
+            <label for="name">Enter your name</label>
+            <input type="text" name="name" id="name" required>
+            <label for="password">Enter your password</label>
+            <input type="password" name="password" id="password" required>
+            <button type="submit">Submit</button>
+        </form>
+        <a href="/api"><button>View</button></a>
+    </div>
+</body>
+
+</html>
